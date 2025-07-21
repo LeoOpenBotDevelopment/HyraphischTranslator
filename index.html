@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zweiseitiger Übersetzer</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> 
+  <title>Hyraphisch translator</title>
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -18,6 +18,7 @@
       margin: 0;
       color: #333;
     }
+    
 
     .container {
       background: #ffffff;
@@ -62,21 +63,20 @@
 
     .button-group {
       display: flex;
-      gap: 15px; /* Space between buttons */
+      gap: 15px; 
       margin-bottom: 25px;
       justify-content: center;
-      flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+      flex-wrap: wrap; 
     }
 
     button {
-      flex: 1; /* Allow buttons to grow and shrink */
-      min-width: 200px; /* Minimum width for each button */
+      flex: 1; 
       padding: 15px;
       background-color: #3f51b5;
       color: white;
       border: none;
       border-radius: 8px;
-      font-size: 16px; /* Slightly smaller font for two buttons */
+      font-size: 16px; 
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.2s ease;
       font-weight: 500;
@@ -110,13 +110,13 @@
 </head>
 <body>
   <div class="container">
-    <h2>Zweiseitiger Text-Übersetzer</h2>
+    <h2>Hyraphisch übersetzen</h2>
     <p>Gib hier deinen Text ein:</p>
     <textarea id="inputText" placeholder="Text eingeben..."></textarea>
 
     <div class="button-group">
-      <button onclick="übersetzeTextZuSymbolen()">Übersetzen (Text zu Hyraphisch)</button>
-      <button onclick="übersetzeSymbolenZuText()">Übersetzen (Hyraphisch zu Text)</button>
+      <button onclick="übersetzeTextZuSymbolen()">Text zu Hyraphisch</button>
+      <button onclick="übersetzeSymbolenZuText()">Hyraphisch zu Text</button>
     </div>
 
     <h3>Übersetzter Text:</h3>
@@ -133,7 +133,7 @@
       'Z': '/', 'z': '/', 'Ä': '1', 'ä': '1', 'Ö': ';', 'ö': ';', 'Ü': '$', 'ü': '$', ' ': ' '
     };
 
-    // Create a reverse dictionary for symbol-to-text translation
+    
     const umgekehrte_ersetzung_dict = {};
     for (const key in ersetzung_dict) {
       umgekehrte_ersetzung_dict[ersetzung_dict[key]] = key;
@@ -144,7 +144,7 @@
       let ausgabe = '';
 
       for (let char of eingabe) {
-        ausgabe += ersetzung_dict[char] ?? char; // Unbekannte Zeichen bleiben gleich
+        ausgabe += ersetzung_dict[char] ?? char; 
       }
 
       document.getElementById('output').innerText = ausgabe;
@@ -155,7 +155,7 @@
       let ausgabe = '';
 
       for (let char of eingabe) {
-        ausgabe += umgekehrte_ersetzung_dict[char] ?? char; // Unbekannte Zeichen bleiben gleich
+        ausgabe += umgekehrte_ersetzung_dict[char] ?? char; 
       }
 
       document.getElementById('output').innerText = ausgabe;
